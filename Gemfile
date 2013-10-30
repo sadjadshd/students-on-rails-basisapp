@@ -45,3 +45,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'rspec-rails', '~> 2.0'
+gem 'devise'
