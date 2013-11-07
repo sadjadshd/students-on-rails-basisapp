@@ -46,3 +46,5 @@ end
 
 gem 'rspec-rails', '~> 2.0'
 gem 'devise'
+
+gem 'zurb-foundation'
