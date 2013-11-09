@@ -11,8 +11,12 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @post.user.first_name + " " + @post.user.last_name%>
+<strong>User:</strong>
+<%= @post.user.first_name + " " + @post.user.last_name + " - " + @post.created_at.to_s%>
+</p>
+
+<h3>Comments</h3>
+
     <% @comments.each do |comment|%>
         <p>
             <%= comment.header%> - <%= comment.user.email %> - <%= comment.updated_at%>
@@ -24,8 +28,8 @@
 
         <hr>
      <% end %>
-</p>
 
+<h3>leave a Comment</h3>
 <p>
   <%= render "comments/form" %>
 </p>
