@@ -13,6 +13,21 @@
 <p>
   <strong>User:</strong>
   <%= @post.user.first_name + " " + @post.user.last_name%>
+    <% @comments.each do |comment|%>
+        <p>
+            <%= comment.header%> - <%= comment.user.email %> - <%= comment.updated_at%>
+        </p>
+
+        <p>
+            <%= comment.content%>
+        </p>
+
+        <hr>
+     <% end %>
+</p>
+
+<p>
+  <%= render "comments/form" %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
