@@ -23,6 +23,7 @@
   <body>
 
     <% if(user_signed_in?) %>
+    Willkommen <%= link_to current_user.first_name, current_user %> 
     <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
     <%= link_to "Settings", edit_user_registration_path %>
     <% else %>
