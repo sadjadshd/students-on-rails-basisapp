@@ -1,4 +1,6 @@
 Basisapp::Application.routes.draw do
+  resources :comments
+
   get "users/index"
   devise_for :users
   resources :posts
