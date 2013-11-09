@@ -17,5 +17,5 @@
 
 
 # Ignoring the .idea directory
-/.idea/*
-/.idea
+.idea/*
+.idea/
