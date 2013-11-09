@@ -30,8 +30,6 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.0.1, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.2.0, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.6.3, RVM: ruby-2.0.0-p247) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="devise (v3.1.1, RVM: ruby-2.0.0-p247) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.4, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.0.2, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, RVM: ruby-2.0.0-p247) [gem]" level="application" />
@@ -51,9 +49,6 @@
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.0.0, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.1.0, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v3.12.2, RVM: ruby-2.0.0-p247) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-core (v2.14.4, RVM: ruby-2.0.0-p247) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v2.14.0, RVM: ruby-2.0.0-p247) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v2.14.2, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v2.14.0, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.2.12, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v4.0.1, RVM: ruby-2.0.0-p247) [gem]" level="application" />
@@ -67,9 +62,7 @@
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.15, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v1.3.0, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.38, RVM: ruby-2.0.0-p247) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.3.0, RVM: ruby-2.0.0-p247) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.3, RVM: ruby-2.0.0-p247) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="zurb-foundation (v4.3.1, RVM: ruby-2.0.0-p247) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
