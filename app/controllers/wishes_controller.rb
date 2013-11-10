@@ -15,6 +15,7 @@ class WishesController < ApplicationController
   # GET /wishes/new
   def new
     @wish = Wish.new
+    @wish.link = "http://"
   end
 
   # GET /wishes/1/edit
@@ -53,6 +54,6 @@ class WishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wish_params
-      params.require(:wish).permit(:name, :description, :wishlist_id)
+      params.require(:wish).permit(:name, :description, :wishlist_id, :price, :link)
     end
 end
