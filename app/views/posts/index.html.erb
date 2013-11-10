@@ -2,31 +2,26 @@
 
 <h2>News</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <% if current_user == post.user %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<% @posts.each do |post| %>
+  <article>
+    <header>
+      <h4><%= post.title %></h4>
+    </header>
+    <content>
+      <p><%= post.body %></p>
+    </content>
+    <footer>
+      <p><%= link_to 'Show', post %> 
+      <% if current_user == post.user %>
+        <%= link_to 'Edit', edit_post_path(post) %> 
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      </p>
+    </footer>
+  </article>
+<% end %>
 
 <br>
 
