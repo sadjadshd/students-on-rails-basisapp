@@ -1,5 +1,9 @@
 Basisapp::Application.routes.draw do
-  resources :wishlists
+  resources :wishlists do 
+    member do
+      get 'send_list'
+    end
+  end
 
   resources :wishes
 

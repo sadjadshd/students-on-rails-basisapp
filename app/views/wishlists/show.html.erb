@@ -10,5 +10,7 @@
   <%= @wishlist.description %>
 </p>
 
+<%= link_to 'send list', action: 'send_list', id: @wishlist.id %>
+
 <%= link_to 'Edit', edit_wishlist_path(@wishlist) %> |
 <%= link_to 'Back', wishlists_path %>

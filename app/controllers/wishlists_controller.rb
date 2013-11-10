@@ -61,6 +61,11 @@ class WishlistsController < ApplicationController
     end
   end
 
+  def send_list
+    wishlist = Wishlist.find(params[:id])
+    WishlistMailer.wishlist_email(wishlist).deliver
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wishlist
