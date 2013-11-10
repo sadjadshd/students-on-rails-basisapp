@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Wunschliste:</strong>
   <%= @wishlist.name %>
 </p>
 
@@ -9,6 +9,49 @@
   <strong>Description:</strong>
   <%= @wishlist.description %>
 </p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+	  <% if @is_owner%>
+      <th></th>
+      <th></th>
+      <th></th>
+	  <% end%>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wishes.each do |wish| %>
+      <tr>
+        <td><%= wish.name %></td>
+        <td><%= wish.description %></td>
+		 <% if @is_owner%>
+        <td><%= link_to 'Show', wish %></td>
+        <td><%= link_to 'Edit', edit_wish_path(wish) %></td>
+        <td><%= link_to 'Destroy', wish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<p>
+<% if @is_owner%>
+<a href="#" data-reveal-id="addWish" class="button">Add Wish</a>
+
+<div id="addWish" class="reveal-modal">
+	<%= render "wishes/form"%>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<% end%>
+</p>
+
 
 <%= link_to 'Edit', edit_wishlist_path(@wishlist) %> |
 <%= link_to 'Back', wishlists_path %>

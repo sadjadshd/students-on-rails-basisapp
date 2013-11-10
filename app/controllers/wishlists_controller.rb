@@ -10,6 +10,17 @@ class WishlistsController < ApplicationController
   # GET /wishlists/1
   # GET /wishlists/1.json
   def show
+    
+    @wishes = Wish.where('wishlist_id = ?', params[:id])
+    
+    if current_user == nil
+      @is_owner = false
+    else
+      @is_owner = current_user.id == Wishlist.find(params[:id]).user_id
+      @wish = Wish.new
+      @wish.name = "New Wish"
+      @wish.wishlist_id = params[:id]
+    end
   end
 
   # GET /wishlists/new
@@ -25,6 +36,8 @@ class WishlistsController < ApplicationController
   # POST /wishlists.json
   def create
     @wishlist = Wishlist.new(wishlist_params)
+
+    @wishlist.user_id = current_user.id
 
     respond_to do |format|
       if @wishlist.save

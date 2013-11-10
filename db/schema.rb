@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131110091321) do
+ActiveRecord::Schema.define(version: 20131110101845) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -70,6 +70,9 @@ ActiveRecord::Schema.define(version: 20131110091321) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "wishlists", ["user_id"], name: "index_wishlists_on_user_id"
 
 end
