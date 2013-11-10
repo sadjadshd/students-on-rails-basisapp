@@ -30,9 +30,13 @@
     <%= link_to "Login", new_user_session_path %> 
     <%= link_to('Sign up', new_user_registration_path)  %>
     <% end %>
-    <%= yield %>
 
-    
+    <div class="row" id="content">
+      <div class="one columns centered">
+        <%= yield %>
+      </div>
+    <div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

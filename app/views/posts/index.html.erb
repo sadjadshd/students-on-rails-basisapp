@@ -1,4 +1,6 @@
-<h1>Listing posts</h1>
+<h2><%= link_to 'Wishlists', wishlists_path %></h2>
+
+<h2>News</h2>
 
 <table>
   <thead>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, :class => "small button"  %>
