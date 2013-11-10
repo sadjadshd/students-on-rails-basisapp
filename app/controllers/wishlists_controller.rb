@@ -37,7 +37,7 @@ class WishlistsController < ApplicationController
   def create
     @wishlist = Wishlist.new(wishlist_params)
 
-    @wishlist.user_id = current_user.id
+    @wishlist.user = current_user
 
     respond_to do |format|
       if @wishlist.save
