@@ -1,4 +1,8 @@
 Basisapp::Application.routes.draw do
+  resources :wishlists
+
+  resources :wishes
+
   resources :comments
 
   get "users/index"
