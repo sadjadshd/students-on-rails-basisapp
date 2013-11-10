@@ -4,15 +4,19 @@ class WishlistsController < ApplicationController
   # GET /wishlists
   # GET /wishlists.json
   def index
-    @wishlists = Wishlist.all
+    if params[:user_id]
+      @wishlists = Wishlist.where(user_id: params[:user_id])
+    else
+      @wishlists = Wishlist.all
+    end
   end
 
   # GET /wishlists/1
   # GET /wishlists/1.json
   def show
-    
+
     @wishes = Wish.where('wishlist_id = ?', params[:id])
-    
+
     if current_user == nil
       @is_owner = false
     else
@@ -77,7 +81,7 @@ class WishlistsController < ApplicationController
   def send_list
     wishlist = Wishlist.find(params[:id])
     WishlistMailer.wishlist_email(wishlist, params[:email]).deliver
-    redirect_to wishlists_url 
+    redirect_to wishlists_url
   end
 
   private

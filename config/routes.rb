@@ -1,5 +1,5 @@
 Basisapp::Application.routes.draw do
-  resources :wishlists do 
+  resources :wishlists do
     member do
       get 'send_list'
     end
@@ -12,7 +12,9 @@ Basisapp::Application.routes.draw do
   get "users/index"
   devise_for :users
   resources :posts
-  resources :users
+  resources :users do
+    resources :wishlists
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -54,7 +56,7 @@ Basisapp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

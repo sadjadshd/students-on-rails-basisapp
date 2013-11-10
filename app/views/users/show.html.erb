@@ -3,3 +3,6 @@
   <strong>Last Name:</strong> <%= @user.last_name %> </br>
   <strong>Email:</strong> <%= @user.email %>
 </p>
+<p>
+  <%= link_to '>> Wunschlisten', user_wishlists_path(@user) %>
+</p>
