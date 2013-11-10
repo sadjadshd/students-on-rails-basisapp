@@ -15,8 +15,16 @@
   <%= @wishlist.description %>
 </p>
 
-
-<%= link_to 'send list', action: 'send_list', id: @wishlist.id %>
+<a href="#" data-reveal-id="sendList" class="button">share list with a friend</a>
+<div id="sendList" class="reveal-modal">
+	<p>Who do you want to send it to?</p>
+	<%= form_tag("#{@wishlist.id}/send_list", method: "get") do %>
+	  <%= label_tag("Email:") %>
+	  <%= email_field(:email, "email") %>
+	  <%= submit_tag("send") %>
+	<% end %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
 
 <table>
   <thead>
