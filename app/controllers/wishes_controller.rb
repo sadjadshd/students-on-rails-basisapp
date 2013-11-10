@@ -25,30 +25,17 @@ class WishesController < ApplicationController
   # POST /wishes.json
   def create
     @wish = Wish.new(wish_params)
-
-    respond_to do |format|
-      if @wish.save
-        format.html { redirect_to @wish, notice: 'Wish was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @wish }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @wish.errors, status: :unprocessable_entity }
-      end
+    if Wishlist.find(@wish.wishlist_id).user_id == current_user.id
+      @wish.save  
     end
+    redirect_to wishlist_path(@wish.wishlist_id)
   end
 
   # PATCH/PUT /wishes/1
   # PATCH/PUT /wishes/1.json
   def update
-    respond_to do |format|
-      if @wish.update(wish_params)
-        format.html { redirect_to @wish, notice: 'Wish was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @wish.errors, status: :unprocessable_entity }
-      end
-    end
+    @wish.update(wish_params)
+    redirect_to wishlist_path(@wish.wishlist_id)
   end
 
   # DELETE /wishes/1
@@ -69,6 +56,6 @@ class WishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wish_params
-      params.require(:wish).permit(:name, :description)
+      params.require(:wish).permit(:name, :description, :wishlist_id)
     end
 end
